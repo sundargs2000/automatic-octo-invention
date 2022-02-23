@@ -5,7 +5,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          printf '%s\n%s\n' "to be prepended" "$(cat README.md)" >README.md
+          printf '%s\n%s\n' "## Find your app hosted at ${{ github.api_url }}" "$(cat README.md)" >README.md
       - name: Commit files
         run: |
           git config --global user.name '${{github.actor}}'
